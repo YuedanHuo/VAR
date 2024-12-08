@@ -5,7 +5,7 @@ pip install pandas statsmodels fredapi
 import pandas as pd
 from fredapi import Fred
 
-FRED_API_KEY = "c5bd769e083c29db4135dfff57de42fd"
+FRED_API_KEY = "your fed api key"
 fred = Fred(api_key=FRED_API_KEY)
 
 def log_difference(series):
