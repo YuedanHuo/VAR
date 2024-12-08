@@ -31,7 +31,6 @@ class SMC:
         log_weights = self.compute_log_weights(self.particles, t)
         self.weights = np.exp(log_weights - np.max(log_weights))  # Stabilize weights
         self.weights /= self.weights.sum()  # Normalize weights to sum to 1
-        #indices = np.random.choice(range(self.Num), size=self.Num, p=self.weights)
         # perform inverse CDF for multinomial resampling
         indices = np.searchsorted(np.cumsum(self.weights), np.random.rand(self.Num))
         self.particles = self.particles[indices]
